@@ -5,7 +5,7 @@ resource "google_compute_network" "our_development_network" {
 
 resource "google_compute_subnetwork" "dev-subnet" {
   ip_cidr_range = "10.0.1.0/24"
-  name          = "devsubnet"
+  name          = "${var.subnetname}"
   network       = "${google_compute_network.our_development_network.self_link}"
   region        = "us-west1"
 }
